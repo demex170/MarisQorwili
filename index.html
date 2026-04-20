@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ka">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>გიორგის და მარის ქორწილი</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Noto+Sans+Georgian:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS სტილები */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Sans Georgian', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #f9f4f1;
+            overflow-x: hidden;
+        }
+
+        /* პირველი გვერდი */
+        .hero {
+            height: 100vh;
+            background: url('https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=2070') no-repeat center center/cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: relative;
+            color: white;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 20px;
+        }
+
+        h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+
+        .scroll-btn {
+            background-color: #d4a373;
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s transform ease, background-color 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .scroll-btn:hover {
+            transform: scale(1.05);
+            background-color: #bc8a5f;
+        }
+
+        /* ინფორმაციის სექცია */
+        .info-section {
+            min-height: 100vh;
+            padding: 80px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-image: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 100%);
+        }
+
+        .info-card {
+            background: white;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+            max-width: 550px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .info-card h2 {
+            color: #5a5a5a;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .details {
+            margin: 30px 0;
+            text-align: left;
+            line-height: 2;
+            color: #444;
+            background: #fdfaf8;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #d4a373;
+        }
+
+        .details p {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background-color: #eee;
+            margin: 30px 0;
+        }
+
+        /* ფორმა */
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+            font-family: inherit;
+            transition: border-color 0.3s;
+        }
+
+        input:focus {
+            border-color: #d4a373;
+        }
+
+        .submit-btn {
+            width: 100%;
+            background-color: #4a4a4a;
+            color: white;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: 0.3s;
+        }
+
+        .submit-btn:hover {
+            background-color: #222;
+        }
+
+        /* ანიმაციები */
+        .fade-in {
+            animation: fadeInDown 1.5s ease-out;
+        }
+
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1 class="fade-in">გეპატიჟებით გიორგის და მარკ ქორწილში</h1>
+            <p class="fade-in">გთხოვთ, გაგვიზიაროთ ეს ბედნიერი დღე</p>
+            <button class="scroll-btn" onclick="scrollToForm()">დაადასტურეთ მოწვევა</button>
+        </div>
+    </section>
+
+    <section id="confirmation" class="info-section">
+        <div class="info-card">
+            <h2>ქორწილის დეტალები</h2>
+            
+            <div class="details">
+                <p><strong>📍 მისამართი:</strong> ჩოხატაური, საზეიმო დარბაზი "შუა ფარცხმა"</p>
+                <p><strong>📅 თარიღი:</strong> 26 აგვისტო, 2026</p>
+                <p><strong>🕒 დრო:</strong> 19:00 საათი</p>
+            </div>
+
+            <hr>
+
+            <h3>დასტურის ფორმა</h3>
+            <p style="font-size: 0.9rem; color: #777; margin-bottom: 20px;">გთხოვთ შეავსოთ მონაცემები:</p>
+
+            <form action="https://formspree.io/f/mpqkljgr" method="POST">
+                <div class="form-group">
+                    <input type="text" name="სახელი და გვარი" placeholder="სახელი და გვარი" required>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="სტუმრების რაოდენობა" placeholder="რამდენი მობრძანდებით?" min="1" required>
+                </div>
+                
+                <input type="hidden" name="_subject" value="ახალი დასტური:გიორგი და მარი">
+                
+                <button type="submit" class="submit-btn">გაგზავნა</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // ღილაკზე დაჭერისას გლუვი ჩასქროლვა
+        function scrollToForm() {
+            document.getElementById('confirmation').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+    </script>
+
+</body>
+</html>
